@@ -5,8 +5,12 @@ import com.lulo.models.User;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import org.hamcrest.core.Is;
 import org.hamcrest.core.IsEqual;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -29,6 +33,7 @@ public class ResponseServiceEmployee implements Question<Boolean> {
         User user = SerenityRest.lastResponse()
                 .jsonPath()
                 .getObject("data", User.class);
+
         assertThat(user.getEmployee_name(), IsEqual.equalTo(TestData.getDataTest().get("employee_name")));
 
         return true;
