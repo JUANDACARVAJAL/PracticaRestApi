@@ -1,6 +1,6 @@
 # Practica de RestApi
 
-Un proyecto donde se ejemplifica el uso del patrón screenplay
+Un proyecto donde se ejemplifica el uso del patrón screenplay para automatizar la prueba de APIs
 
 
 ## Detalles generales de la implementación
@@ -13,14 +13,14 @@ La estructura completa del proyecto es la siguiente:
 
 ````
 + model
-    Clases relacionadas con el modelo de dominio y sus respectivos builder cuando es necesario
+    Clases relacionadas con el modelo de dato de prueba.
 + tasks
     Clases que representan tareas que realiza el actor a nivel de proceso de negocio
 + interacion
-    Clases que representan las interacciones directas con la interfaz de usuario
+    Clases que representan las interacciones directas des usuario
 + questions
-    Objetos usados para consultar acerca del estado de la aplicación
-
+    asserciones para las valdiaciones.
+    
 + runners
     Clases que permiten correr los tests
 + step definitions
