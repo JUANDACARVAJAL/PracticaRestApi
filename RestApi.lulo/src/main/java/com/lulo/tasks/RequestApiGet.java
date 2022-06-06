@@ -1,7 +1,7 @@
 package com.lulo.tasks;
 
 import com.lulo.interactions.RequestServiceGet;
-import com.lulo.models.TestData;
+import com.lulo.utils.EndPoints;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -14,6 +14,6 @@ public class RequestApiGet implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(RequestServiceGet.send(TestData.getDataTest().get("url").toString()));
+        actor.attemptsTo(RequestServiceGet.send(EndPoints.GET_EMPLOYEES.getUrl()));
     }
 }
