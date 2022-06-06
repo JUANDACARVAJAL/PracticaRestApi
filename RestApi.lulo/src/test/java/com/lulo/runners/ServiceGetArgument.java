@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        features = "src/test/resources/features/service_get.feature",
+        features = "src/test/resources/features/service_getemployed.feature",
         glue = {"com.lulo.stepdefinitions"}
 )
 
-public class ServiceGet {
+public class ServiceGetArgument {
 }
