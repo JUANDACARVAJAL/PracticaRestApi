@@ -3,14 +3,13 @@ package com.lulo.stepdefinitions;
 import com.lulo.models.TestData;
 import com.lulo.questions.ResponseService;
 import com.lulo.questions.ResponseServiceBody;
+import com.lulo.questions.ResponseServiceMessage;
 import com.lulo.questions.ResponseServiceEmployee;
 import com.lulo.tasks.RequestApiGet;
 import com.lulo.tasks.RequestApiGetParameter;
+import com.lulo.tasks.RequestApiPost;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.util.List;
-import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
@@ -37,8 +36,18 @@ public class StepRestApi {
     @Then("the client can see the information employees")
     public void theClientCanSeeTheInformationEmployees() {
         theActorInTheSpotlight().should(seeThat(ResponseService.isExpected()));
+        theActorInTheSpotlight().should(seeThat(ResponseServiceMessage.isExpected()));
         theActorInTheSpotlight().should(seeThat(ResponseServiceEmployee.isExpected()));
+    }
 
+    @When("the client requests a created employee service")
+    public void theClientRequestsACreatedEmployeeService() {
+        theActorInTheSpotlight().attemptsTo(RequestApiPost.create());
+    }
 
+    @Then("the client is added")
+    public void theClientIsAdded() {
+        theActorInTheSpotlight().should(seeThat(ResponseService.isExpected()));
+        theActorInTheSpotlight().should(seeThat(ResponseServiceMessage.isExpected()));
     }
 }

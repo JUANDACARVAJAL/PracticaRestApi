@@ -2,7 +2,8 @@ package com.lulo.utils;
 
 public enum EndPoints {
     GET_EMPLOYEES("api/v1/employees"),
-    GET_EMPLOYEE("api/v1/employee/{id}")
+    GET_EMPLOYEE("api/v1/employee/{id}"),
+    POST_CREATE("api/v1/create")
 
     ;
 
