@@ -1,0 +1,1 @@
+{"id":"client-requests-diferent-services;request-get-service","name":"Request get service","result":"FAILURE","testFailureSummary":"FAILURE;java.lang.AssertionError;1 expectation failed.\nExpected status code \u003c200\u003e but was \u003c429\u003e.\n;ResponseSpecificationImpl.groovy"}
