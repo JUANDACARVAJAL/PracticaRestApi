@@ -19,7 +19,9 @@ public class RequestServiceGet implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Get.resource(url)
+                Get.resource(url).with(request -> request
+                        .log().all())
+
         );
     }
 }

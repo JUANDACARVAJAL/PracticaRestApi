@@ -19,7 +19,8 @@ public class ResponseService implements Question<Boolean> {
 
         actor.should(
                 seeThatResponse(
-                        response -> response.statusCode(statusCode))
+                        response -> response.log().all()
+                                .statusCode(statusCode))
         );
         return true;
     }
